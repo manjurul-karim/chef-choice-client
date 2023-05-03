@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
@@ -121,7 +122,7 @@ const Home = () => {
                   type="radio"
                   name="rating-2"
                   className="mask mask-star-2 bg-orange-400"
-                  checked
+                  defaultChecked
                 />
               </div>
             </div>
@@ -165,7 +166,7 @@ const Home = () => {
                     type="radio"
                     name="rating-2"
                     className="mask mask-star-2 bg-orange-400"
-                    checked
+                    defaultChecked
                   />
                   <input
                     type="radio"

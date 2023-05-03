@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaRegThumbsUp } from "react-icons/fa";
 
 const Chefcard = ({ chef }) => {
   const { chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes } =
@@ -18,21 +19,21 @@ const Chefcard = ({ chef }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{chefName}</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-start">
-            <div className="badge badge-outline">
-              Experience: {yearsOfExperience}Y
+          <div className="card-actions justify-start ">
+            <div className="badge badge-outline hover:font-bold">
+              Experience: {yearsOfExperience}Year
             </div>
-            <div className="badge badge-outline">
+            <div className="badge badge-outline hover:font-bold">
               Recepies: {numberOfRecipes}
             </div>
-           
           </div>
           <div className="card-actions justify-between">
-          <div className="badge badge-outline">
-              Recepies: {numberOfRecipes}
+            <div className="flex  ">
+              <FaRegThumbsUp /> {likes}
             </div>
-            <Link to="/blog"><button className="btn-link">View Recipe</button></Link>
+            <Link to="/chefdetails">
+              <button className="btn-link">View Recipe</button>
+            </Link>
           </div>
         </div>
       </div>
