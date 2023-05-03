@@ -1,0 +1,211 @@
+[
+
+  {
+    "id" :1,
+    "chefPicture": "https://i.ibb.co/Jcc7tkq/chef-1.jpg",
+    "chefName": "Samantha Lee",
+    "yearsOfExperience": 10,
+    "numberOfRecipes": 3,
+    "recipes": [
+      {
+        "recipeName": "Classic Caesar Salad",
+        "ingredients": [
+          "romaine lettuce",
+          "croutons",
+          "Parmesan cheese",
+          "anchovy paste",
+          "garlic"
+        ]
+      },
+      {
+        "recipeName": "Beef Bourguignon",
+        "ingredients": ["beef chuck", "bacon", "carrots", "onion", "red wine"]
+      },
+      {
+        "recipeName": "Lemon Tart",
+        "ingredients": ["butter", "sugar", "lemon", "eggs", "flour"]
+      }
+    ],
+    "shortBio": "Samantha Lee is a classically trained chef with over 10 years of experience in the industry. She specializes in French cuisine and is known for her elegant plating and use of seasonal ingredients."
+  },
+  {
+    "id" :2,
+    "chefPicture": "https://i.ibb.co/wR96WjC/chef-2.png",
+    "chefName": "Juan Martinez",
+    "yearsOfExperience": 5,
+    "numberOfRecipes": 3,
+    "recipes": [
+      {
+        "recipeName": "Fish Tacos",
+        "ingredients": [
+          "tilapia",
+          "flour tortillas",
+          "cabbage",
+          "lime",
+          "sour cream"
+        ]
+      },
+      {
+        "recipeName": "Chicken Fajitas",
+        "ingredients": [
+          "chicken breast",
+          "bell pepper",
+          "onion",
+          "cumin",
+          "paprika"
+        ]
+      },
+      {
+        "recipeName": "Guacamole",
+        "ingredients": ["avocado", "tomato", "onion", "cilantro", "lime"]
+      }
+    ],
+    "shortBio": "Juan Martinez is a chef with a passion for Mexican cuisine. He has worked in several restaurants in both Mexico and the United States, and is known for his flavorful and authentic dishes."
+  },
+  {
+    "id" :3,
+    "chefPicture": "https://i.ibb.co/X7bTBxT/chef-3.png",
+    "chefName": "Emily Chang",
+    "yearsOfExperience": 8,
+    "numberOfRecipes": 3,
+    "recipes": [
+      {
+        "recipeName": "Baked Salmon",
+        "ingredients": ["salmon fillet", "lemon", "butter", "dill", "garlic"]
+      },
+      {
+        "recipeName": "Grilled Chicken Salad",
+        "ingredients": [
+          "chicken breast",
+          "mixed greens",
+          "cucumber",
+          "tomato",
+          "balsamic vinaigrette"
+        ]
+      },
+      {
+        "recipeName": "Chocolate Cake",
+        "ingredients": ["flour", "sugar", "cocoa powder", "baking soda", "eggs"]
+      }
+    ],
+    "shortBio": "Emily Chang is a chef with a background in pastry. She has worked in several high-end restaurants and is known for her elegant and delicious desserts."
+  },
+  {
+    "id" :4,
+    "chefPicture": "https://i.ibb.co/SKXvgK8/chef-4.jpeg",
+    "chefName": "Tiffany Nguyen",
+    "yearsOfExperience": 7,
+    "numberOfRecipes": 4,
+    "recipes": [
+      {
+        "recipeName": "Pho",
+        "ingredients": [
+          "beef broth",
+          "rice noodles",
+          "sirloin steak",
+          "bean sprouts",
+          "Thai basil"
+        ]
+      },
+      {
+        "recipeName": "Banh Mi Sandwich",
+        "ingredients": [
+          "baguette",
+          "pork belly",
+          "carrots",
+          "cilantro",
+          "jalapeno"
+        ]
+      },
+      {
+        "recipeName": "Spring Rolls",
+        "ingredients": [
+          "rice paper",
+          "shrimp",
+          "vermicelli noodles",
+          "lettuce",
+          "mint"
+        ]
+      },
+      {
+        "recipeName": "Mango Sticky Rice",
+        "ingredients": ["sticky rice", "coconut milk", "mango", "sugar", "salt"]
+      }
+    ],
+    "shortBio": "Tiffany Nguyen is a chef with a passion for Vietnamese cuisine. She grew up cooking with her family and has worked in several Vietnamese restaurants, where she has developed a unique and delicious style of cooking."
+  },
+  {
+    "id" :5,
+    "chefPicture": "https://i.ibb.co/tLW0T3h/chef-5.jpg",
+    "chefName": "Andre Williams",
+    "yearsOfExperience": 12,
+    "numberOfRecipes": 3,
+    "recipes": [
+      {
+        "recipeName": "Southern Fried Chicken",
+        "ingredients": [
+          "chicken thighs",
+          "buttermilk",
+          "flour",
+          "paprika",
+          "garlic powder"
+        ]
+      },
+      {
+        "recipeName": "Mac and Cheese",
+        "ingredients": ["macaroni", "cheddar cheese", "milk", "butter", "flour"]
+      },
+      {
+        "recipeName": "Collard Greens",
+        "ingredients": [
+          "collard greens",
+          "bacon",
+          "onion",
+          "chicken broth",
+          "vinegar"
+        ]
+      }
+    ],
+    "shortBio": "Andre Williams is a chef with a passion for Southern comfort food. He has worked in several Southern-style restaurants and is known for his flavorful and classic dishes."
+  },
+  {
+    "id" :6,
+    "chefPicture": "https://i.ibb.co/mhzjgWw/chef-6.jpg",
+    "chefName": "Maria Hernandez",
+    "yearsOfExperience": 9,
+    "numberOfRecipes": 3,
+    "recipes": [
+      {
+        "recipeName": "Gazpacho",
+        "ingredients": [
+          "tomatoes",
+          "cucumber",
+          "red bell pepper",
+          "garlic",
+          "olive oil"
+        ]
+      },
+      {
+        "recipeName": "Paella",
+        "ingredients": [
+          "chicken thighs",
+          "chorizo",
+          "shrimp",
+          "rice",
+          "saffron"
+        ]
+      },
+      {
+        "recipeName": "Flan",
+        "ingredients": [
+          "sugar",
+          "milk",
+          "eggs",
+          "vanilla extract",
+          "lemon zest"
+        ]
+      }
+    ],
+    "shortBio": "Maria Hernandez is a chef with a passion for Spanish cuisine. She has worked in several restaurants in Spain and the United States, and is known for her flavorful and authentic dishes."
+  }
+]

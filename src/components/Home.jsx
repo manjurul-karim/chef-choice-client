@@ -1,15 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../assets/banner.png";
 import party1 from "../assets/party-1.jpg";
 import party2 from "../assets/party-2.jpg";
 import party3 from "../assets/party-3.jpg";
 import may17 from "../assets/may-17.jpg";
+import may09 from "../assets/may-9.jpg";
+import may21 from "../assets/may-21.jpg";
+import Chefcard from "./Chefcard";
 
 const Home = () => {
+  const [chefInfo, setChefInfo] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/chef")
+      .then((res) => res.json())
+      .then((data) => setChefInfo(data))
+      .catch((error) => console.error(error));
+  }, []);
   return (
-    <div className="bg-blue-500">
+    <div className="">
       <div>
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col lg:flex-row-reverse">
@@ -38,10 +49,11 @@ const Home = () => {
   </div>
 </div> */}
       </div>
-      <div>
-        {/* ! Chef Card Section Start */}
+      {/* ! Chef Card Section Start */}
+      <h2 className="text-center text-4xl font-bold"> Our Chef's</h2>
 
-        <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5">
+        {/* <div className="card w-96 bg-base-100 shadow-xl">
           <figure>
             <img
               src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -62,7 +74,11 @@ const Home = () => {
               <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
-        </div>
+        </div> */}
+        
+        {
+          chefInfo.map(chef => (<Chefcard key={chef.id} chef={chef}>  </Chefcard>))
+        }
       </div>
       {/* chef Card Section End */}
 
@@ -73,56 +89,19 @@ const Home = () => {
           {" "}
           What Our Customer's Have to Say
         </h2>
-        <div className="flex flex-col md:flex-row justify-between gap-5 mx-4  ">
-          <div className="">
-            <h2>Beautiful View And Healthy Food</h2>
+        <div className="flex flex-col md:flex-row justify-between gap-12 mx-4  ">
+          <div className="border rounded p-3">
+            <div className="flex justify-between my-4">
+              <h2 className="text-xl font-semibold">
+                Beautiful View And Healthy Food
+              </h2>
 
-            <div className="rating">
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-              />
-              <input
-                type="radio"
-                name="rating-2"
-                className="mask mask-star-2 bg-orange-400"
-                checked
-              />
-            </div>
-            <div>
-              <p>
-                {" "}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                earum totam similique unde itaque ducimus mollitia tempore rerum
-                eaque adipisci dolorum voluptates, quisquam aliquam neque
-                exercitationem odit iusto iure numquam cumque corporis.
-                Veritatis debitis rem, modi cum quis numquam provident harum
-                accusantium delectus similique eos facilis quisquam, corporis
-                voluptatum? Temporibus.
-              </p>
-            </div>
-          </div>
-          <div>
-            <div className="">
-              <h2>Beautiful View And Healthy Food</h2>
-
-              <div className="rating">
+              <div className="rating flex justify-center">
+                <input
+                  type="radio"
+                  name="rating-2"
+                  className="mask mask-star-2 bg-orange-400"
+                />
                 <input
                   type="radio"
                   name="rating-2"
@@ -144,11 +123,56 @@ const Home = () => {
                   className="mask mask-star-2 bg-orange-400"
                   checked
                 />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
+              </div>
+            </div>
+            <div>
+              <p>
+                {" "}
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+                earum totam similique unde itaque ducimus mollitia tempore rerum
+                eaque adipisci dolorum voluptates, quisquam aliquam neque
+                exercitationem odit iusto iure numquam cumque corporis.
+                Veritatis debitis rem, modi cum quis numquam provident harum
+                accusantium delectus similique eos facilis quisquam, corporis
+                voluptatum? Temporibus.
+              </p>
+            </div>
+          </div>
+          <div>
+            <div className="border rounded p-3 ">
+              <div className="flex justify-between my-4">
+                <h2 className=" text-xl font-semibold">
+                  Beautiful View And Healthy Food
+                </h2>
+
+                <div className="rating ">
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                    checked
+                  />
+                  <input
+                    type="radio"
+                    name="rating-2"
+                    className="mask mask-star-2 bg-orange-400"
+                  />
+                </div>
               </div>
               <div>
                 <p>
@@ -178,7 +202,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-8 ">
           <div className=" bg-base-100 rounded mb-2 p-4 ">
             <div className="flex gap-4 mb-4">
-              <img className="h-12 w-12 rounded" src={may17} alt="" />
+              <img className="h-12 w-12 rounded" src={may09} alt="" />
               <div>
                 <h2 className="card-title">New album is released!</h2>
                 <p>May 09,2023 - 8.00 PM</p>
@@ -216,7 +240,7 @@ const Home = () => {
           </div>
           <div className=" bg-base-100 rounded mb-2 p-4  ">
             <div className="flex gap-4 mb-4">
-              <img className="h-12 w-12 rounded" src={may17} alt="" />
+              <img className="h-12 w-12 rounded" src={may21} alt="" />
               <div>
                 <h2 className="card-title">Girl's hangOut !</h2>
                 <p>May 21,2023 - 6.00 PM</p>
