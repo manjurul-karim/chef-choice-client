@@ -10,6 +10,9 @@ import ChefDetails from "./components/ChefDetails";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import AuthProviders from "./providers/AuthProviders";
+import LoadingSpinner from "./components/LoadingSpinner";
+import PrivateRoute from "./routes/PrivateRoute";
+import Terms from "./components/Terms";
 
 const router = createBrowserRouter([
   {
@@ -23,21 +26,29 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog></Blog>,
       },
       {
-        path: "/chefdetails",
-        element: <ChefDetails></ChefDetails>,
+        path: "chefdetails",
+        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>,
       },
       {
-        path: "/registration",
+        path: "registration",
         element: <Registration></Registration>,
       },
+      {
+        path: 'loader',
+        element: <LoadingSpinner></LoadingSpinner>
+      },
+      {
+        path: 'terms',
+        element: <Terms></Terms>
+      }
     ],
   },
 ]);

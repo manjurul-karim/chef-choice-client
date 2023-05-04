@@ -1,32 +1,35 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import {AuthContext} from '../providers/AuthProviders'
-
+import { AuthContext } from "../providers/AuthProviders";
 
 const Registration = () => {
+  const { user, createUser } = useContext(AuthContext);
+  // console.log(createUser);
+  const [accpted , setAccepted] = useState(false)
 
-    const {user , createUser} = useContext(AuthContext)
-    // console.log(createUser);
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+const handleAccepted = event =>{
+  setAccepted(event.target.checked);
+}
 
-    const handleRegister =(event) =>{
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value
-        const email = form.email.value;
-        const password = form.password.value
-        console.log(name, email , password);
-        createUser( email , password)
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            form.reset();
-        })
-        .catch(error => {
-            console.log(error)
-        })
-    }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -36,7 +39,7 @@ const Registration = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleRegister} className="card-body">
-            <div className="form-control">
+              <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
@@ -44,6 +47,18 @@ const Registration = () => {
                   type="text"
                   placeholder="name"
                   name="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="photo URL"
+                  name="photo"
                   className="input input-bordered"
                   required
                 />
@@ -71,10 +86,29 @@ const Registration = () => {
                   className="input input-bordered"
                   required
                 />
-               
               </div>
+
+              <div className="form-control">
+                <label onClick={handleAccepted} className="label justify-normal gap-2 cursor-pointer">
+                  <input  type="checkbox" className="checkbox" />
+                  <span className="label-text">
+                    {
+                      <>
+                        <span className="text-md font-bold">Accept </span>
+                        <Link
+                          className="underline text-md font-semibold"
+                          to="/terms"
+                        >
+                          terms and Conditions
+                        </Link>
+                      </>
+                    }
+                  </span>
+                </label>
+              </div>
+
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button className="btn btn-primary" disabled={!accpted}>Register</button>
               </div>
             </form>
             <div className="mb-4 px-8">

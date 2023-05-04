@@ -5,13 +5,13 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
 
 const Header = () => {
-  const { user ,logedOut } = useContext(AuthContext);
+  const { user, logedOut } = useContext(AuthContext);
 
-  const handleLogedOut = () =>{
+  const handleLogedOut = () => {
     logedOut()
-    .then(() =>{})
-    .catch(error => console.error(error))
-  }
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
 
   return (
     <div className="flex  justify-between px-8 py-4 bg-gray-100">
@@ -39,20 +39,35 @@ const Header = () => {
           </NavLink>
         </li>
 
-        <li>
+        {/* <li>
           <NavLink
             to="/login"
             className={({ isActive }) => (isActive ? "active" : "default")}
           >
             Profilepicture
           </NavLink>
-        </li>
+        </li> */}
         <li>
-          <NavLink>
+          <NavLink className='flex gap-2'>
             {user ? (
               <>
-                <span>{user.email}</span>{" "}
-                <button onClick={handleLogedOut} className="btn btn-xs">signOut</button>{" "}
+                <div>
+                  <div
+                    className="tooltip  tooltip-left"
+                    data-tip={user.displayName}
+                  >
+                    <span>
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                    </span>
+                  </div>
+                </div>
+                <button onClick={handleLogedOut} className="btn btn-sm btn-outline btn-primary lowercase">
+                  signOut
+                </button>
               </>
             ) : (
               <Link to="/login">login</Link>

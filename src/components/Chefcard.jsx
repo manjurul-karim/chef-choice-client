@@ -18,16 +18,16 @@ const Chefcard = ({ chef }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{chefName}</h2>
-          <div className="card-actions justify-start ">
-            <div className="badge badge-outline hover:font-bold">
+          <h2 className="card-title my-2">{chefName}</h2>
+          <div className="card-actions justify-start my-4">
+            <div className="badge badge-outline bg-blue-400  py-3 hover:font-bold">
               Experience: {yearsOfExperience}Year
-            </div>
-            <div className="badge badge-outline hover:font-bold">
+            </div >
+            <div className="badge badge-outline bg-blue-400   py-3 hover:font-bold ">
               Recepies: {numberOfRecipes}
             </div>
           </div>
-          <div className="card-actions justify-between">
+          <div className="card-actions justify-between my-2">
             <div className="flex  ">
               <FaRegThumbsUp /> {likes}
             </div>

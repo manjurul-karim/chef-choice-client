@@ -1,30 +1,57 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
-
+import { FaGoogle ,FaGithub } from "react-icons/fa";
+import { signInWithPopup } from "firebase/auth";
 const Login = () => {
+  const { signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+const navigate = useNavigate()
+  const location = useLocation()
+  console.log(location);
 
-const {signIn} = useContext(AuthContext)
+  const from = location.state?.from?.pathname || '/' ;
+  console.log(from);
 
- const handleLogIn =(event) =>{
+  const handleLogIn = (event) => {
     event.preventDefault();
- const form = event.target;
- const email = form.email.value;
- const password = form.password.value
- console.log(email , password);
-signIn(email, password)
-.then(result => {
-    const loggedUser = result.user;
-    console.log(loggedUser);
-    form.reset()
-})
-.catch(error =>{
-    console.log(error);
-})
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
 
- }
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate(from, {replace : true})
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, {replace : true})
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleGithubSignIn = () =>{
+    signInWithGithub()
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      navigate(from, {replace : true})
+    })
+    .catch(error => console.log(error))
+  }
 
   return (
     <div>
@@ -69,7 +96,28 @@ signIn(email, password)
               </div>
             </form>
             <div className="m-4">
-            <h2 className="text-lg font-semibold">New To Here Please: <span className="text-md font-bold underline"><Link to='/registration'>Register</Link> </span></h2> 
+              <h2 className="text-lg font-semibold">
+                New To Here Please:{" "}
+                <span className="text-md font-bold underline">
+                  <Link to="/registration">Register</Link>{" "}
+                </span>
+              </h2>
+            </div>
+            <div className="py-4 text-center ">
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn btn-outline btn-primary mb-4"
+              >
+                
+                <FaGoogle/> <span className="pl-3">Sign In With Google</span>
+              </button>
+              <button
+                onClick={handleGithubSignIn}
+                className="btn btn-outline btn-primary"
+              >
+                {" "}
+                <FaGithub/> <span className="pl-3">Sign In With Github</span>
+              </button>
             </div>
           </div>
         </div>
