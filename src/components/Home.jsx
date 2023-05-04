@@ -38,23 +38,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        {/* <div className="hero min-h-screen" style={{ backgroundImage: `url("../assets/banner.jpg")` }}>
-  <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div> */}
       </div>
       {/* ! Chef Card Section Start */}
       <h2 className="text-center text-4xl font-bold"> Our Chef's</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-4">
-        
         {chefInfo.map((chef) => (
           <Chefcard key={chef.id} chef={chef}>
             {" "}
@@ -66,7 +54,7 @@ const Home = () => {
       {/* Extra Section One Start */}
 
       <div className="my-28">
-        <h2 className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+        <h2 className="text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 my-8">
           {" "}
           What Our Customer's Have to Say
         </h2>

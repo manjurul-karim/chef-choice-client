@@ -19,7 +19,9 @@ const navigate = useNavigate()
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // const displayName= form.displayName.value
+    // const photoURL = form.photoURL.value
+    console.log(email, password );
 
     signIn(email, password)
       .then((result) => {
