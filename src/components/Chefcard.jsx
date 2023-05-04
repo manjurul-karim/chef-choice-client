@@ -9,7 +9,7 @@ const Chefcard = ({ chef }) => {
     chef;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-full bg-base-100 border ">
         <figure>
           <img
             className="h-72 w-full p-4 rounded-md shadow-lg"

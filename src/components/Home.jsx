@@ -53,33 +53,13 @@ const Home = () => {
       {/* ! Chef Card Section Start */}
       <h2 className="text-center text-4xl font-bold"> Our Chef's</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-y-5">
-        {/* <div className="card w-96 bg-base-100 shadow-xl">
-          <figure>
-            <img
-              src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">NEW</div>
-            </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-start">
-              <div className="badge badge-outline">Fashion</div>
-              <div className="badge badge-outline">Products</div>
-            </div>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
-          </div>
-        </div> */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-4">
         
-        {
-          chefInfo.map(chef => (<Chefcard key={chef.id} chef={chef}>  </Chefcard>))
-        }
+        {chefInfo.map((chef) => (
+          <Chefcard key={chef.id} chef={chef}>
+            {" "}
+          </Chefcard>
+        ))}
       </div>
       {/* chef Card Section End */}
 
