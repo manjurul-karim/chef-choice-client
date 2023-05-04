@@ -13,7 +13,7 @@ import AuthProviders from "./providers/AuthProviders";
 import LoadingSpinner from "./components/LoadingSpinner";
 import PrivateRoute from "./routes/PrivateRoute";
 import Terms from "./components/Terms";
-import Chefcard from "./components/Chefcard";
+
 
 const router = createBrowserRouter([
   {
