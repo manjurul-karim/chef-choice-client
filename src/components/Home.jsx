@@ -58,7 +58,7 @@ const Home = () => {
           {" "}
           What Our Customer's Have to Say
         </h2>
-        <div className="flex flex-col md:flex-row justify-between gap-12 mx-4  ">
+        <div className="flex flex-col md:flex-row justify-between gap-8 mx-4  ">
           <div className="border rounded p-3">
             <div className="flex justify-between my-4">
               <h2 className="text-xl font-semibold">
@@ -97,13 +97,13 @@ const Home = () => {
             <div>
               <p>
                 {" "}
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                earum totam similique unde itaque ducimus mollitia tempore rerum
-                eaque adipisci dolorum voluptates, quisquam aliquam neque
-                exercitationem odit iusto iure numquam cumque corporis.
-                Veritatis debitis rem, modi cum quis numquam provident harum
-                accusantium delectus similique eos facilis quisquam, corporis
-                voluptatum? Temporibus.
+                This cozy restaurant has left the best impressions! Hospitable
+                hosts, delicious dishes, beautiful presentation, wide wine list
+                and wonderful dessert. I recommend to everyone! I would like to
+                come back here again and again.It’s a great experience. The
+                ambiance is very welcoming and charming. Amazing wines, food and
+                service. Staff are extremely knowledgeable and make great
+                recommendations.
               </p>
             </div>
           </div>
@@ -146,13 +146,13 @@ const Home = () => {
               <div>
                 <p>
                   {" "}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-                  earum totam similique unde itaque ducimus mollitia tempore
-                  rerum eaque adipisci dolorum voluptates, quisquam aliquam
-                  neque exercitationem odit iusto iure numquam cumque corporis.
-                  Veritatis debitis rem, modi cum quis numquam provident harum
-                  accusantium delectus similique eos facilis quisquam, corporis
-                  voluptatum? Temporibus.
+                  This place is great! Atmosphere is chill and cool but the
+                  staff is also really friendly. They know what they’re doing
+                  and what they’re talking about, and you can tell making the
+                  customers happy is their main priority. Food is pretty good,
+                  some italian classics and some twists, and for their prices
+                  it’s 100% worth it.Very good service, good menu … not overly
+                  extensive. 
                 </p>
               </div>
             </div>
@@ -169,7 +169,7 @@ const Home = () => {
           UPComing Calander Of Event
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pb-8 ">
-          <div className=" bg-base-100 rounded mb-2 p-4 ">
+          <div className=" bg-base-100 rounded mb-2 p-4 border-2 ">
             <div className="flex gap-4 mb-4">
               <img className="h-12 w-12 rounded" src={may09} alt="" />
               <div>
@@ -179,48 +179,57 @@ const Home = () => {
             </div>
             <div className="flex">
               <figure>
-                <img className="h-36 w-72 rounded" src={party1} alt="Album" />
+                <img className="h-28 w-72 rounded" src={party1} alt="Album" />
               </figure>
               <div className="card-body">
-                <p>Click the button to listen on Spotiwhy app.</p>
+                <p>
+                  new Album realised and a party is comming knock at the door!!
+                  Ready guys!!
+                </p>
               </div>
             </div>
           </div>
-          <div className=" bg-base-100 rounded mb-2  p-4 ">
+          <div className=" bg-base-100 rounded mb-2  p-4 border-2 ">
             <div className="flex gap-4 mb-4 ">
               <img className="h-12 w-12 rounded" src={may17} alt="" />
               <div>
-                <h2 className="card-title"></h2>
+                <h2 className="card-title">Boy's HangOut</h2>
                 <p>May 17,2023 - 10.00 PM</p>
               </div>
             </div>
             <div className="flex">
               <figure>
                 <img
-                  className="h-36 w-72 rounded-sm"
+                  className="h-28 w-72 rounded-sm"
                   src={party2}
                   alt="Album"
                 />
               </figure>
               <div className="card-body">
-                <p>Click the button to listen on Spotiwhy app.</p>
+                <p>
+                  All Boys are invited,its our mega party segment .we offer you
+                  our delicious and fomous dishes
+                </p>
               </div>
             </div>
           </div>
-          <div className=" bg-base-100 rounded mb-2 p-4  ">
-            <div className="flex gap-4 mb-4">
+          <div className=" bg-base-100 rounded mb-2 p-4 border-2 ">
+            <div className="inline-flex gap-4 mb-4">
               <img className="h-12 w-12 rounded" src={may21} alt="" />
               <div>
                 <h2 className="card-title">Girl's hangOut !</h2>
                 <p>May 21,2023 - 6.00 PM</p>
               </div>
             </div>
-            <div className="flex">
+            <div className="inline-flex">
               <figure>
-                <img className="h-36 w-72" src={party3} alt="Album" />
+                <img className="h-28 w-72" src={party3} alt="Album" />
               </figure>
               <div className="card-body">
-                <p>Click the button to listen on Spotiwhy app.</p>
+                <p>
+                  Girl's are our special customer,we arranged a special party
+                  especially for this town's girls.Hope you enjoy it.
+                </p>
               </div>
             </div>
           </div>

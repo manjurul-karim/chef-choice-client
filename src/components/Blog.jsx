@@ -12,10 +12,10 @@ const Blog = () => {
             </h2>
           </div>
         </div>
-        <div className="max-w-screen-xl sm:mx-auto">
+        <div className="max-w-screen-xl sm:mx-auto p-4">
           <div className="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2">
             <div className="space-y-8">
-              <div>
+              <div className="border-2 shadow-2xl p-4">
                 <h5 className="mb-4 text-xl font-medium">
                   Tell us the differences between uncontrolled and controlled
                   components.
@@ -27,7 +27,7 @@ const Blog = () => {
                   difficult to work with, especially in larger systems. Examples
                   of uncontrolled components include input fields, checkboxes,
                   and radio buttons.{" "}
-                </p>
+                </p> <br />
                 <p>
                   Controlled components, on the other hand, are components that
                   receive their state and behavior from external sources, such
@@ -38,7 +38,7 @@ const Blog = () => {
                   Redux or MobX for state management.
                 </p>
               </div>
-              <div>
+              <div className="border-2 shadow-2xl p-4">
                 <h5 className="mb-4 text-xl font-medium">
                   How to validate React props using PropTypes ?
                 </h5>
@@ -53,7 +53,7 @@ const Blog = () => {
             </div>
 
             <div className="space-y-8">
-              <div>
+              <div className="border-2 shadow-2xl p-4">
                 <h5 className="mb-4 text-xl font-medium">
                   Tell us the difference between nodejs and express js.
                 </h5>
@@ -65,7 +65,7 @@ const Blog = () => {
                   more robust.
                 </p>
               </div>
-              <div>
+              <div className="border-2 shadow-2xl p-4">
                 <h5 className="mb-4 text-xl font-medium">
                   What is a custom hook, and why will you create a custom hook?
                 </h5>
