@@ -21,25 +21,33 @@ const Blog = () => {
                   components.
                 </h5>
                 <p className="text-gray-700">
-                  Context is primarily used when some data needs to be
-                  accessible by many components at different nesting levels.
-                  Apply it sparingly because it makes component reuse more
-                  difficult. If you only want to avoid passing some props
-                  through many levels, component composition is often a simpler
-                  solution than context.
+                  Uncontrolled components are those that manage their own state
+                  and don't receive any external control or synchronization.
+                  They typically don't have a well-defined API and can be
+                  difficult to work with, especially in larger systems. Examples
+                  of uncontrolled components include input fields, checkboxes,
+                  and radio buttons.{" "}
+                </p>
+                <p>
+                  Controlled components, on the other hand, are components that
+                  receive their state and behavior from external sources, such
+                  as a parent component or a state management library. They have
+                  a well-defined API and are easier to work with and reason
+                  about. Examples of controlled components include form elements
+                  that are managed by a parent component, or components that use
+                  Redux or MobX for state management.
                 </p>
               </div>
               <div>
                 <h5 className="mb-4 text-xl font-medium">
-                  How to validate React props using PropTypes
+                  How to validate React props using PropTypes ?
                 </h5>
                 <p className="text-gray-700">
-                  A custom hook in React is a reusable function that
-                  encapsulates common logic that can be shared across multiple
-                  components. Custom hooks allow you to extract and reuse
-                  stateful logic from functional components, which can help
-                  simplify your code, make it more modular and easier to
-                  maintain.
+                  React provides a utility library called PropTypes for
+                  validating the props that are passed to a component. PropTypes
+                  allows you to specify the types and shapes of the props that a
+                  component expects, which helps catch errors and make your code
+                  more robust.
                 </p>
               </div>
             </div>
@@ -50,10 +58,11 @@ const Blog = () => {
                   Tell us the difference between nodejs and express js.
                 </h5>
                 <p className="text-gray-700">
-                  useRef is a hook in React that allows you to create a
-                  reference to a DOM element or to a value that persists across
-                  component renders. It returns an object with a current
-                  property, which is initialized to the passed argument.
+                  React provides a utility library called PropTypes for
+                  validating the props that are passed to a component. PropTypes
+                  allows you to specify the types and shapes of the props that a
+                  component expects, which helps catch errors and make your code
+                  more robust.
                 </p>
               </div>
               <div>
@@ -61,12 +70,16 @@ const Blog = () => {
                   What is a custom hook, and why will you create a custom hook?
                 </h5>
                 <p className="text-gray-700">
-                  useMemo is a hook in React that allows you to optimize the
-                  performance of your components by memoizing the results of
-                  expensive computations. It takes a function and an array of
-                  dependencies, and returns a memoized value that is only
-                  recomputed when one of the dependencies changes. In other
-                  words, useMemo allow
+                  A custom hook in React is a reusable function that contains
+                  some logic that can be shared across multiple components.
+                  Custom hooks are similar to regular hooks in React, such as
+                  useState and useEffect, but they are created by the developer
+                  rather than provided by the React framework. Custom hooks
+                  allow developers to abstract away complex logic and create
+                  reusable pieces of code that can be used across multiple
+                  components. They can help make components more readable and
+                  maintainable by separating concerns and reducing code
+                  duplication.
                 </p>
               </div>
             </div>
