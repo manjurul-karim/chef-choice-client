@@ -25,7 +25,7 @@ const Home = () => {
       <div>
         <div className="hero min-h-screen ">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <img src={banner} className=" w-2/3 rounded-md " />
+            <img src={banner} className=" w-2/3 rounded-md " loading="lazy" />
             <div className="pl-12">
               <h1 className="text-5xl  font-bold">
                 Welcome To the Chef's Choice

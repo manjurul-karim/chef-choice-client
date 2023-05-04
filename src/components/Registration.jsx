@@ -7,7 +7,10 @@ import { AuthContext } from "../providers/AuthProviders";
 const Registration = () => {
   const { user, createUser } = useContext(AuthContext);
   // console.log(createUser);
-  const [accpted , setAccepted] = useState(false)
+  const [accpted, setAccepted] = useState(false);
+  const [sucess, setSucess] = useState("");
+  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -16,19 +19,28 @@ const Registration = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
+
     createUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        // ! validation
+        if (!/(?=.*[0-9])/.test(password)) {
+          setError("please enter number");
+        } else if (password.length < 6) {
+          setError("please set at least 6 character");
+          
+        }
+        setError(" ");
         form.reset();
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
-const handleAccepted = event =>{
-  setAccepted(event.target.checked);
-}
+  const handleAccepted = (event) => {
+    setAccepted(event.target.checked);
+  };
 
   return (
     <div>
@@ -89,8 +101,11 @@ const handleAccepted = event =>{
               </div>
 
               <div className="form-control">
-                <label onClick={handleAccepted} className="label justify-normal gap-2 cursor-pointer">
-                  <input  type="checkbox" className="checkbox" />
+                <label
+                  onClick={handleAccepted}
+                  className="label justify-normal gap-2 cursor-pointer"
+                >
+                  <input type="checkbox" className="checkbox" />
                   <span className="label-text">
                     {
                       <>
@@ -108,9 +123,14 @@ const handleAccepted = event =>{
               </div>
 
               <div className="form-control mt-6">
-                <button className="btn btn-primary" disabled={!accpted}>Register</button>
+                <button className="btn btn-primary" disabled={!accpted}>
+                  Register
+                </button>
               </div>
             </form>
+
+            <p className="text-red-500">{error}</p>
+
             <div className="mb-4 px-8">
               <h2 className="text-lg font-semibold">
                 Already Have an Account Please:{" "}

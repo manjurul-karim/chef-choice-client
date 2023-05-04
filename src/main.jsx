@@ -13,6 +13,7 @@ import AuthProviders from "./providers/AuthProviders";
 import LoadingSpinner from "./components/LoadingSpinner";
 import PrivateRoute from "./routes/PrivateRoute";
 import Terms from "./components/Terms";
+import Chefcard from "./components/Chefcard";
 
 const router = createBrowserRouter([
   {
@@ -29,10 +30,7 @@ const router = createBrowserRouter([
         path: "blog",
         element: <Blog></Blog>,
       },
-      {
-        path: "chefdetails",
-        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
-      },
+
       {
         path: "login",
         element: <Login></Login>,
@@ -42,13 +40,22 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: 'loader',
-        element: <LoadingSpinner></LoadingSpinner>
+        path: "loader",
+        element: <LoadingSpinner></LoadingSpinner>,
       },
       {
-        path: 'terms',
-        element: <Terms></Terms>
-      }
+        path: "terms",
+        element: <Terms></Terms>,
+      },
+
+      {
+        path: "chefdetails",
+        element: (
+          <PrivateRoute>
+            <ChefDetails></ChefDetails>
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

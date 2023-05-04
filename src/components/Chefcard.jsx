@@ -31,7 +31,7 @@ const Chefcard = ({ chef }) => {
             <div className="flex  ">
               <FaRegThumbsUp /> {likes}
             </div>
-            <Link to="/chefdetails">
+            <Link to='chefdetails'>
               <button className="btn-link">View Recipe</button>
             </Link>
           </div>

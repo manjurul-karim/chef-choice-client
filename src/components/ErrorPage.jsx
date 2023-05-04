@@ -12,7 +12,7 @@ const ErrorPage = () => {
     <section className="flex items-center h-screen p-16 bg-gray-100 text-gray-900">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
         <div className="max-w-md text-center">
-          <img src={errorpic} alt="" />
+          <img src={errorpic} alt="" loading="lazy" />
           <Link to="/" className="btn">
             Back to homepage
           </Link>

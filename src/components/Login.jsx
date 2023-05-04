@@ -1,18 +1,21 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
-import { FaGoogle ,FaGithub } from "react-icons/fa";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { signInWithPopup } from "firebase/auth";
 const Login = () => {
-  const { signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
-const navigate = useNavigate()
-  const location = useLocation()
-  console.log(location);
+  const [sucess, setSucess] = useState("");
+  const [error, setError] = useState("");
 
-  const from = location.state?.from?.pathname || '/' ;
-  console.log(from);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -21,17 +24,19 @@ const navigate = useNavigate()
     const password = form.password.value;
     // const displayName= form.displayName.value
     // const photoURL = form.photoURL.value
-    console.log(email, password );
+    console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        setSucess("login Sucessfull");
+        setError("");
         form.reset();
-        navigate(from, {replace : true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -40,20 +45,25 @@ const navigate = useNavigate()
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate(from, {replace : true})
+
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };
 
-  const handleGithubSignIn = () =>{
+  const handleGithubSignIn = () => {
     signInWithGithub()
-    .then(result =>{
-      const loggedUser = result.user;
-      console.log(loggedUser);
-      navigate(from, {replace : true})
-    })
-    .catch(error => console.log(error))
-  }
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.log(error));
+  };
+
+  // const handleResetPassword = event =>{
+  //   onClick={handleResetPassword}
+  // }
 
   return (
     <div>
@@ -97,6 +107,9 @@ const navigate = useNavigate()
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+
+            <p className="text-red-500">{error}</p>
+
             <div className="m-4">
               <h2 className="text-lg font-semibold">
                 New To Here Please:{" "}
@@ -110,15 +123,14 @@ const navigate = useNavigate()
                 onClick={handleGoogleSignIn}
                 className="btn btn-outline btn-primary mb-4"
               >
-                
-                <FaGoogle/> <span className="pl-3">Sign In With Google</span>
+                <FaGoogle /> <span className="pl-3">Sign In With Google</span>
               </button>
               <button
                 onClick={handleGithubSignIn}
                 className="btn btn-outline btn-primary"
               >
                 {" "}
-                <FaGithub/> <span className="pl-3">Sign In With Github</span>
+                <FaGithub /> <span className="pl-3">Sign In With Github</span>
               </button>
             </div>
           </div>

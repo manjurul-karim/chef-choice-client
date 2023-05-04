@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from "react";
 
@@ -27,7 +28,8 @@ const Blog = () => {
                   difficult to work with, especially in larger systems. Examples
                   of uncontrolled components include input fields, checkboxes,
                   and radio buttons.{" "}
-                </p> <br />
+                </p>{" "}
+                <br />
                 <p>
                   Controlled components, on the other hand, are components that
                   receive their state and behavior from external sources, such
